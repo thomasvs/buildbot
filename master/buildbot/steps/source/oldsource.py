@@ -27,13 +27,19 @@ class _ComputeRepositoryURL(object):
     implements(IRenderable)
 
     def __init__(self, step, repository):
+        """
+        @type  step: L{SlaveSource}
+        @param step:
+        @type  repository: string
+        @param repository:
+        """
         self.step = step
         self.repository = repository
 
     def getRenderingFor(self, props):
         '''
-        Helper function that the repository URL based on the parameter the
-        source step took and the Change 'repository' property
+        Helper function that computes the repository URL, based on the
+        parameter the source step took and the Change 'repository' property
         '''
 
         build = props.getBuild() # buildbot.process.build.Build
