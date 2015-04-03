@@ -36,7 +36,7 @@ class _ComputeRepositoryURL(object):
         source step took and the Change 'repository' property
         '''
 
-        build = props.getBuild()
+        build = props.getBuild() # buildbot.process.build.Build
         assert build is not None, "Build should be available *during* a build?"
         s = build.getSourceStamp(self.step.codebase)
 
